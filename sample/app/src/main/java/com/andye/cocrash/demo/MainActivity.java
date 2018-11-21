@@ -5,6 +5,7 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.andye.cocrash.NativeBreakpad;
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         NativeBreakpad.init(Environment.getExternalStorageDirectory().getAbsolutePath());
 
 
+        final String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+
 
         Button btnTestNDKCrash = (Button) findViewById(R.id.btnTestNDKCrash);
         Button btnTestJavaCrash = (Button) findViewById(R.id.btnTestJavaCrash);
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                NativeBreakpad.testNativeCrash();
+                Toast.makeText(MainActivity.this, path, Toast.LENGTH_SHORT).show();
             }
         });
 

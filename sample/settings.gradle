@@ -1,1 +1,1 @@
-include ':app', ':cocrashlib'
+include ':app',':cocrashlib'

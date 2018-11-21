@@ -27,15 +27,13 @@ native crash 的抓取，错误信息存在.dmp的文件中，存成路径可以
 编译后的.so文件所在：`build_lib/libs` 下
 
 ## 把编译好的so库集成到App(Android)
-1. 拷贝.so文件到你项目的app/libs/
-2. 创建一个同样包名的目录，拷贝 `cocrash-breakpad-demo/sample/cocrashlib/src/main/java/com/andye/cocrash/NativeCoCrash.java `到你刚创建的目录下，
-(注意：**包名不能改！**)
+1. 拷贝`build_lib/libs` 下的.so文件到你项目的sample/cocrashlib/libs/下
+2. 在sample根目录下执行 `build.sh`,即可，自动打成aar包, 把sample/release/libs 下的aar拷贝到你的工程即可，参加 sample/app 示例代码
 3. 在你的Application类初始化：` NativeBreakpad.init(Environment.getExternalStorageDirectory().getAbsolutePath());`
 注意：**这个方法所传的参数你可以直接定义**
 
 
 
-**你也可直接使用编译好的so库。下一版我会编译出一套sdk来，可直接使用**
 
 
 
